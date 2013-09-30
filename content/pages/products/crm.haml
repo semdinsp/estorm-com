@@ -1,0 +1,23 @@
+Categories: crm
+Template: home
+Summary: CRM System
+
+.container-fluid
+  .row-fluid
+    .span9
+      %h1 Customer Relationship Management System
+      :markdown
+        Are you tracking your customer pipeline via Excel? Would you like an instant report on the pipeline status? How do you manage the loss of a key sales person? Can you map your sales process and track it automatically?
+
+        Estorm Tech provides a customer relationship management solution to address these issues and others head on. Our customers are using their CRM for diverse use cases such as inventory management, sales tracking, training and time based service contracts
+
+        In addition we are working to create a help system with screencasts to help you solve common business requirements while using our system. 
+
+    .span3
+      = haml :product_menu, :layout => false
+
+  .row-fluid
+    .span9
+    .span3
+      = haml :learn_more, :layout => false
+

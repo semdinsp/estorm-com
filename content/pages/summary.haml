@@ -1,0 +1,68 @@
+Title: Estorm Technology Pte. Ltd
+Template: home
+Link text: Summary
+
+.container
+  .row
+    %h1 
+      Services Summary
+  .row
+    %section.jumbotron
+      %section.hero-unit
+        %section.lucky1
+          = haml :marketing_tags, :layout => false
+
+  /.container-fluid
+  .row
+    .col-lg-3
+      %h2 Hosted Software Rationale
+      :markdown
+        * Ease of Software Installation	
+        * Intuitive Software Interface
+        * Support and Training
+        * Competitive Pricing
+        * Database Integrity
+        * Access Security
+        * Change Management 
+    .col-lg-3
+      %h2 Streamline business processes
+      :markdown
+        * Improve sales productivity	
+        * Reduce reporting requirements
+        * Mobile CRM access
+        * Prevent loss of accounts due to staff turnover
+        * Track inventory
+    .col-lg-3
+      %h2 Features
+      :markdown
+        * deployed on the cloud [Amazon](aws.amazon.com)
+        * customization to suit your business requirements
+        * over four years of operation
+        * integrated solutions to manage customer communications (APN, SMS, Email, etc)
+        * free trial
+    .col-lg-3
+      %h2 Diverse Products
+      :markdown
+        + Hosted [CRM](/products/crm) customized to support your business
+        + [Distributor](/products/tms) tracking
+        + [Ticket](products/tms) management
+        + [Scratch Card](/products/scratch) and Lottery data generation
+        + [SMS](/products/sms) based solutions
+  .row
+    .col-lg-9
+      %section.lucky2
+        = haml :estorm_users, :layout => false
+
+
+
+
+/ %section.getting-started
+/  %heading
+/    %h1 Diverse Products
+/  :markdown
+/    + Hosted CRM customized to support your business
+/    + Distributor tracking
+/    + Ticket management
+/    + Scratch card data generation
+
+
