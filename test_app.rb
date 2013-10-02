@@ -17,6 +17,13 @@ class EstormTest < Test::Unit::TestCase
   def app
     Nesta::App
   end
+# FIX ME- how to test static
+ # def test_staticpage
+  #   get '/static/start-up-edm-v1.pdf'
+     #puts last_response.methods
+  #   assert last_response.ok?, "response not ok #{last_response.inspect}"
+     #assert last_response.body.include? 'Estorm Technologies Pte. Ltd.'
+  # end
 
   def test_first_pageworks
     get '/'

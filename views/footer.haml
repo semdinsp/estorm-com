@@ -2,33 +2,35 @@
 %br
 %br
 .footer
-  .accordian#footeraccordian
-    .accordian-group
-      .accordian-heading
-      %a{:class=>"accordion-toggle", "data-toggle"=>"collapse" , "data-parent"=>"#footeraccordian", :href=>"#collapseOne"}
-        .small
-          Copyright and System information
-      #collapseOne{:class=> "accordion-body collapse"}
-        .accordion-inner
-          .panel
-            .panel-heading
-              .panel-title
-                Copyright (C) Estorm Technologies Pte. Ltd. 2013
-            %a(href='http://www.estormtech.com')
-            %p
-              %small
-                Developed by Scott with Nesta, a
-                = succeed "." do
-                  %a(href="http://nestacms.com") Ruby CMS
-                using the twitter 
-                %a(href="http://getbootstrap.com/") boostrap
-                css v3 to provide responsive support on various devices.
-                Code for the entire website is available at
-                %a(href="http://github.com/semdinsp/nestasites") github source
+  #accordion.panel-group
+    .panel.panel-default
+      .panel-heading
+        %h5.panel-title
+          %a{:class=>"accordion-toggle", "data-toggle"=>"collapse" , "data-parent"=>"#accordian", "data-target"=>"#collapseOne"}
+            Show Version and Copyright
+      #collapseOne.panel-collapse.collapse
+        .panel-body
+          = "Version: 1.2 " 
+          %img(src="/attachments/estormcrm.jpg" width=50 height=50 alt='estorm logo')
+          %a(href='http://www.estormtech.com')
+            %h6 Copyright Estorm Technologies Pte. Ltd. 2013
+          %p
+            %small Company registration: 200904977M
+          %p
+            %small
+              Developed by Scott with Nesta, a
+              = succeed "." do
+                %a(href="http://nestacms.com") Ruby CMS
+              using the twitter 
+              %a(href="http://getbootstrap.com/") boostrap
+              css v3 to provide responsive support on various devices.
+              Code for the entire website is available at
+              %a(href="http://github.com/semdinsp/estorm-com") github source
+
 
 
 %script(type="text/javascript" src="http://code.jquery.com/jquery.js")
-%script(type="text/javascript" src="/bootstrap/js/bootstrap.js")
+%script(type="text/javascript" src="/bootstrap/dist/js/bootstrap.js")
 %script(type="text/javascript" src="/javascripts/application.js")
 / %script(type="text/javascript" src="http://yandex.st/highlightjs/7.3/highlight.min.js")
 /  :javascript

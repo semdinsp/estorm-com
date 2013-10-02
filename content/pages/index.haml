@@ -4,7 +4,7 @@ Layout: toppage
 Link text: Home
 
 .container
-  .col-lg-3
+  .col-md-3
     %a(class="brand" href="/summary")
       %img( src="/attachments/estormcrm.jpg" width=35 height=16 alt='estorm logo')
       = @heading
@@ -16,11 +16,11 @@ Link text: Home
 .container
   
   .row
-    .col-offset-2.col-lg-7
+    .col-offset-2.col-md-7
       %section.lucky2
         = haml :estorm_users, :layout => false
   .row
-    .col-offset-1.col-lg-10
+    .col-offset-1.col-md-10
       .carousel(id="myCarousel" class="slide")
         %ol.carousel-indicators
           %li{"data-target"=>"#myCarousel", "data-slide-to"=>"0" ,:class=>"active"}

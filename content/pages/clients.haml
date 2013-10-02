@@ -7,7 +7,7 @@ Summary: Client list
 .container
   %h1 Clients and Partners
   .row
-    .col-lg-9
+    .col-md-9
       .carousel(id="myClientCarousel" class="slide")
         %ol.carousel-indicators
           %li{"data-target"=>"#myClientCarousel", "data-slide-to"=>"0" ,:class=>"active"}
@@ -28,7 +28,7 @@ Summary: Client list
           <
         %a{:class=>"right carousel-control" ,:href=>"#myClientCarousel", "data-slide"=>"next"}
           >
-    .col-lg-3
+    .col-md-3
       = haml :product_menu, :layout => false
       = haml :learn_more, :layout => false
 /  .row-fluid
