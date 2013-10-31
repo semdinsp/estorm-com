@@ -44,7 +44,7 @@ class EstormTest < Test::Unit::TestCase
    end
    def test_products_pages
    
-      pagelist=["crm","dms","scratch","tms","sms","lottery"]
+      pagelist=["crm","dms","pos","scratch","tms","sms","lottery"]
       puts "testing product pages: #{pagelist.inspect}"
       pagelist.each { |page| 
            get "products/#{page}"

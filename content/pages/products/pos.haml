@@ -1,0 +1,21 @@
+Categories: pos
+Template: home
+Summary: Point of Sale Solution
+
+.container
+  .row
+    .col-md-9
+      %h1 Point of Sale
+      :markdown
+        We have a web hosted point of sale solution that small retail and restaurants can use to deliver simple and easy to use POS capabilities. This is based on input from a small cafe owner and we expect to deploy it with telco operators in Indonesia who will provide it as  a bundled solution to their SME subscribers.
+
+        This is currently under active development and features will be added frequently.
+
+        Check back here for more information.
+
+    .col-md-3
+      = haml :product_menu, :layout => false
+
+  .row
+    .col-offset-9.col-md-3
+      = haml :learn_more, :layout => false
