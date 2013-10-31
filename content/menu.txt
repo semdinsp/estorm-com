@@ -6,6 +6,7 @@ products
   products/tms
   products/sms
   products/lottery
+  products/pos
   products/dms
 support
 clients
