@@ -28,12 +28,14 @@ class EstormTest < Test::Unit::TestCase
   def test_first_pageworks
     get '/'
     #puts last_response.methods
+    puts "testing first pages:"
     assert last_response.ok?
     assert last_response.body.include? 'Estorm Technologies Pte. Ltd.'
   end
 
   def test_key_pages
      pagelist=["contact","support","about","clients","products","products/crm", "/"]
+     puts "testing key pages: #{pagelist.inspect}"
      pagelist.each { |page| 
           get page
           assert last_response.ok?, "#{page} not found"
@@ -41,7 +43,9 @@ class EstormTest < Test::Unit::TestCase
             }
    end
    def test_products_pages
-      pagelist=["crm","dms","scratch","tms","sms"]
+   
+      pagelist=["crm","dms","scratch","tms","sms","lottery"]
+      puts "testing product pages: #{pagelist.inspect}"
       pagelist.each { |page| 
            get "products/#{page}"
            assert last_response.ok?, "products/#{page} not found"

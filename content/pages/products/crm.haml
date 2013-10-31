@@ -2,9 +2,9 @@ Categories: crm
 Template: home
 Summary: CRM System
 
-.container-fluid
-  .row-fluid
-    .span9
+.container
+  .row
+    .col-md-9
       %h1 Customer Relationship Management System
       :markdown
         Are you tracking your customer pipeline via Excel? Would you like an instant report on the pipeline status? How do you manage the loss of a key sales person? Can you map your sales process and track it automatically?
@@ -13,11 +13,10 @@ Summary: CRM System
 
         In addition we are working to create a help system with screencasts to help you solve common business requirements while using our system. 
 
-    .span3
+    .col-md-3
       = haml :product_menu, :layout => false
 
-  .row-fluid
-    .span9
-    .span3
+  .row
+    .col-offset-9.col-md-3
       = haml :learn_more, :layout => false
 

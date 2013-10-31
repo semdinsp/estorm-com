@@ -2,9 +2,9 @@ Categories: dms
 Template: home
 Summary: Document Management System
 
-.container-fluid
-  .row-fluid
-    .span9
+.container
+  .row
+    .col-md-9
       %h1 Document Management System
       :markdown
         Our document management system allows you to share documents with your customers and internally with fine grained security control.  You can for example upload a new NDA to the system and ensure that this is the document used by your sales people from now on.  The system provides version control and allows you to exchange comments and meta data around the documents. 
@@ -13,10 +13,9 @@ Summary: Document Management System
 
         The system is hosted on our Amazon.com servers for optimal response rate.  The servers can be hosted on dedicated servers fro the client if needed.
 
-    .span3
+    .col-md-3
       = haml :product_menu, :layout => false
 
-  .row-fluid
-    .span9
-    .span3
+  .row
+    .col-offset-9.col-md-3
       = haml :learn_more, :layout => false

@@ -2,9 +2,9 @@ Categories: tms
 Template: home
 Summary: Ticket/Distributor Management System
 
-.container-fluid
-  .row-fluid
-    .span9
+.container
+  .row
+    .col-md-9
       %h1 TMS - Ticket/Distributor Management System
       :markdown
         Extending our ability in scratch card data we have developed a system to track items delivered to a distributor and manage the entire distribution chain and sub dealers.  This can track returns, locations of the distributor/point of sale and other aspects of channel management.
@@ -13,10 +13,9 @@ Summary: Ticket/Distributor Management System
 
         We have a trial system available for perusal at [TMS](http://test.tms.sg.estormtech.com).  For login details please [contact us](/contact).
 
-    .span3
+    .col-md-3
       = haml :product_menu, :layout => false
 
-  .row-fluid
-    .span9
-    .span3
+  .row
+    .col-offset-9.col-md-3
       = haml :learn_more, :layout => false

@@ -5,6 +5,7 @@ products
   products/scratch
   products/tms
   products/sms
+  products/lottery
   products/dms
 support
 clients
