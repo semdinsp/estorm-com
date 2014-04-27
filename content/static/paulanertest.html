@@ -1,0 +1,485 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<!-- meta tags -->
+<meta name="viewport" content="width=device-width" />
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Paulaner Brauhaus Singapore | April 2014</title>
+	<!-- Stylesheet 
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" >-->
+<style>
+/* ------------------------------------- 
+		GLOBAL 
+------------------------------------- */
+* { 
+	margin:0;
+	padding:0;
+}
+* { font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif; }
+
+img { 
+	max-width: 100%; 
+}
+.collapse {
+	margin:0;
+	padding:0;
+}
+body {
+	-webkit-font-smoothing:antialiased; 
+	-webkit-text-size-adjust:none; 
+	width: 100%!important; 
+	height: 100%;
+}
+
+
+/* ------------------------------------- 
+		ELEMENTS 
+------------------------------------- */
+a { color: #2BA6CB;}
+
+.btn {
+	text-decoration: none;
+	color: #FFF;
+	background-color: #666;
+	padding: 5px 10px;
+	font-weight: bold;
+	margin-right: 10px;
+	text-align: center;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+}
+
+p.callout {
+	background-color: #ECF8FF;
+	padding-top: 2px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin: 0px;
+	max-width: 565px;
+}
+.callout a {
+	font-weight:bold;
+	color: #2BA6CB;
+}
+
+table.social {
+	/* 	padding:15px; */
+	background-color: #ebebeb;
+	alignment-adjust:central;
+	padding: 10px;
+	
+}
+.social .soc-btn {
+	padding: 3px 7px;
+	font-size:12px;
+	margin-bottom:10px;
+	text-decoration:none;
+	color: #FFF;font-weight:bold;
+	display:block;
+	text-align:center;
+}
+a.fb { background-color: #3B5998!important; }
+a.tw { background-color: #1daced!important; }
+a.web{ background-color: #FF9933!important;
+}
+a.ms { background-color: #000!important; }
+
+.sidebar .soc-btn { 
+	display:block;
+	width:100%;
+}
+
+/* ------------------------------------- 
+		HEADER 
+------------------------------------- */
+table.head-wrap { width: 100%;}
+table.head-wrap2 {
+	width: 100%;
+	margin: 0px;
+	padding: 0px;		 
+}
+table.head-wrapz {
+	max-width: 585px;
+	background-color: #FFF;
+}
+.header.container table td.logo { padding: 15px; }
+.header.container table td.label { padding: 15px; padding-left:0px;}
+.newsletter-title{
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	line-height: 1.1;
+	margin-bottom: 15px;
+	color: #FDDB63;
+	font-weight: bold;
+	font-size: 1.2em;
+}
+/* ------------------------------------- 
+		BODY 
+------------------------------------- */
+table.body-wrap { width: 100%;}
+
+
+/* ------------------------------------- 
+		FOOTER 
+------------------------------------- */
+table.footer-wrap { width: 100%;	clear:both!important;
+}
+.footer-wrap .container td.content  p { border-top: 1px solid rgb(215,215,215); padding-top:2px;}
+.footer-wrap .container td.content p {
+	font-size:10px;
+	font-weight: bold;
+	
+}
+
+
+/* ------------------------------------- 
+		TYPOGRAPHY 
+------------------------------------- */
+h1,h2,h3,h4,h5,h6 {
+font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; line-height: 1.1; margin-bottom:15px; color:#000;
+}
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small { font-size: 60%; color: #6f6f6f; line-height: 0; text-transform: none; }
+
+h1 { font-weight:200; font-size: 30px;}
+h2 { font-weight:200; font-size: 27px;}
+h3 { font-weight:500; font-size: 17px;}
+h4 { font-weight:500; font-size: 24px;}
+h5 { font-weight:900; font-size: 17px;}
+h6 { font-weight:900; font-size: 15px; text-transform: uppercase; color:#444;}
+
+.collapse { margin:0!important;}
+
+p, ul { 
+	margin-bottom: 12px; 
+	font-weight: normal; 
+	font-size:14px; 
+	line-height:1.6;
+}
+p.lead { font-size:14px; }
+p.last { margin-bottom:0px;}
+
+ul li {
+	margin-left:5px;
+	list-style-position: inside;
+}
+
+/* ------------------------------------- 
+		SIDEBAR 
+------------------------------------- */
+ul.sidebar {
+	background:#ebebeb;
+	display:block;
+	list-style-type: none;
+}
+ul.sidebar li { display: block; margin:0;}
+ul.sidebar li a {
+	text-decoration: none;
+	color: #FC0;
+	padding: 10px 16px;
+	/* 	font-weight:bold; */
+	margin-right: 10px;
+	/* 	text-align:center; */
+	cursor: pointer;
+	border-bottom: 1px solid #777777;
+	border-top: 1px solid #FFFFFF;
+	display: block;
+	margin: 0;
+}
+ul.sidebar li a.last { border-bottom-width:0px;}
+ul.sidebar li a h1,ul.sidebar li a h2,ul.sidebar li a h3,ul.sidebar li a h4,ul.sidebar li a h5,ul.sidebar li a h6,ul.sidebar li a p { margin-bottom:0!important;}
+
+
+
+/* --------------------------------------------------- 
+		RESPONSIVENESS
+		Nuke it from orbit. It's the only way to be sure. 
+------------------------------------------------------ */
+
+/* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+.container {
+	display:block!important;
+	max-width:600px!important;
+	margin:0 auto!important; /* makes it centered */
+	clear:both!important;
+}
+
+/* This should also be a block element, so that it will fill 100% of the .container */
+.content {
+	padding:15px;
+	max-width:600px;
+	margin:0 auto;
+	display:block; 
+}
+.contents {
+	display: block;
+	margin-top: 0;
+	margin-right: 0px;
+	margin-bottom: 0;
+	margin-left: 0px;
+	padding-top: 2px;
+	padding-right: 0px;
+	padding-bottom: 2px;
+	padding-left: 0px;
+}
+
+
+/* Tables are 100% wide */
+.content table { width: 100%; }
+
+
+/* Odds and ends */
+.column {
+	width: 400px;
+	float:left;
+}
+.column tr td { padding: 15px; }
+.column-wrap { 
+	padding:0!important; 
+	margin:0 auto; 
+	max-width:600px!important;
+}
+.column table { width:100%;}
+.social .column {
+	width: 290px;
+	min-width: 289px;
+}
+.social .columns {
+	width: 395px;
+	min-width: 389px;
+}
+
+/* place a .clear element after each set of columns, just to be safe */
+.clear { display: block; clear: both; 
+}
+
+#pagewrap {
+	width: 600px;
+	max-width:55%;
+	background: #fff;
+	padding: 20px;
+	margin: 0 auto;
+}
+
+#pagewraps {
+	width: 850px;
+	max-width: 70%;
+	margin: 0 auto;
+	padding: 10px;
+}
+.fixed {
+	width: 565px;
+	max-width: 565%;
+	margin: 0 auto;
+	padding: 10px;
+	background-color: #ffffff;
+	border: 1px solid #CCC;
+}
+.fixed-head {
+	width: 598px;
+	max-width: 70%;
+	margin: 0 auto;
+	padding: 2px;
+}
+.fixed-blue {
+	width: 598px;
+	max-width: 70%;
+	margin: 0 auto;
+	background-color: #ECF8FF;
+}
+
+
+/************************************************************************************
+VIDEO
+*************************************************************************************/
+.video-container {
+	position: relative;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	height: 0;
+	overflow: hidden;
+}
+.video-container iframe,  
+.video-container object,  
+.video-container embed {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* video fixed width wrappers */
+.video-wrapper {
+	width: 600px;
+	max-width: 100%;
+}
+.video-wrapper2 {
+	width: 500px;
+	max-width: 100%;
+}
+
+
+/* ------------------------------------------- 
+		PHONE
+		For clients that support media queries.
+		Nothing fancy. 
+-------------------------------------------- */
+@media only screen and (max-width: 600px) {
+	
+	a[class="btn"] { display:block!important; margin-bottom:10px!important; background-image:none!important; margin-right:0!important;}
+
+	div[class="column"] { width: auto!important; float:none!important;}
+	
+	table.social div[class="column"] {
+		width:auto!important;
+	}
+
+}
+.container1 {	display:block!important;
+	max-width:600px!important;
+	margin:0 auto!important; /* makes it centered */
+	clear:both!important;
+}
+</style>
+</head>
+ 
+<body bgcolor="#FFFFFF" topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+<div class= "fixed-head">
+  <p class=""><span class="header container"><img src="http://static.sg.estormtech.com/paulaner/template/head.jpg" alt="head"  /></span></p></div>
+<div class="fixed"><table class="head-wrap" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+   	  <table bgcolor="#ffffff">
+    	    <tr>
+    	      <table class= "head-wrapz"><td class="small" style="vertical-align: top; padding:10px;">
+              <table width ="500"><h1>Highlight of May: MAIFEST is coming</h1>
+    	        <p class=""><span class="lead">Do you know in rural regions of Germany, May spring celebrations of pagan origin are traditionally held on the night before May Day? <br />Young people use this opportunity to party with motto "Dance into May"!
+Lets celebrate and dance into Maifest at the Paulaner with special freshly brewed by in house brewmaster called "Limited Maibock Billy Goat Beer".While you are enjoying the Maibock, tantalize your hunger with delectables and excquisite white asparagus menu prepared in 6 different ways. Lets get party started, folks!<br /> 
+ </span></p>
+   	          <a href="http://www.paulaner-brauhaus.com/singapore/home" target="new" class="btn">More Details &raquo;</a></table> </td></table>
+  	      </tr>
+   <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+      </table></div> 
+<div class="fixed-head" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+      <table bgcolor="">
+        <tr>
+          <td width="20%" style="vertical-align: top; padding:10px;"><img src="http://static.sg.estormtech.com/paulaner/paulanerMay2014/images/2014_maibock.jpg" alt="body" /></td>
+        </tr>
+    </table></td></div> </table>  
+      
+   	
+      <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+
+              
+<div class="fixed"><table class="head-wrap" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+   	  <table bgcolor="#ffffff">
+    	    <tr>
+    	      <table class= "head-wrapz"><td class="small" width="20%" style="vertical-align: top; padding:10px;">
+              <h1>Promotion</h1>
+    	        <p class=""><span class="lead">Dont miss your "Daily Lunch Specials" on weekdays prepared by our master chef from germany, Klaus. By popular demand: 1/2 Crispy Knuckle on Gravy with mashed parsley potatoes with freshly brewed Paulaner beers. Guten Appetit! <br /></span></p>
+   	          <a href="http://www.paulaner-brauhaus.com/data/Pdf/upload/menu_singapore_DLS_mar_apr.pdf" target="new" class="btn">More Details &raquo;</a></td></table>
+  	      </tr>
+   <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+      </table></div>              
+
+<div class="fixed"><table class="head-wrap" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+   	  <table bgcolor="#ffffff">
+    	    <tr>
+    	      <table class= "head-wrapz"><td class="small" width="20%" style="vertical-align: top; padding:10px;">
+              <h1>Activities</h1>
+    	        <p class=""><span class="lead">Wondering what is going to happen more exciting on May?.<br />Come an join us "Labor Day & Mother's day brunches" on 1st and 11th May from 11am to 2.30pm. Surprise your friends and loved ones to enjoy a selection of grilled sausages, steaks and many more...Yummy!.
+Before that, dont miss the match between Bayern Munich vs. Real  Madrid on 30 April at 2.45am. Enjoy the match with Paulaner beer all night long and straight to Labor day Brunch the next day. Sounds good plan, yeah!
+Come and join us a soccer club by signing up below link.</span></p>
+   	          <a href="http://www.estormtech.com/static/paulaner_signup_soccer.html" target="new" class="btn">More Details &raquo;</a></td></table>
+  	      </tr>
+   <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+      </table></div>
+<div class="fixed"><table class="head-wrap" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+   	  <table bgcolor="#ffffff">
+    	    <tr>
+    	      <table class= "head-wrapz"><td class="small" width="20%" style="vertical-align: top; padding:10px;">
+              <h1>Events</h1>
+    	        <p class=""><span class="lead">No time to organize your birthday, corporate events or even <br />Bavarian style wedding? Talk to us and no worry no more.</span></p>
+   	          <a href="http://www.youtube.com/embed/jQ5bmEDFR2Y" target="new" class="btn">More Details &raquo;</a></td></table>
+  	      </tr>
+   <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+</table></div>
+<!-- /HEADER -->
+
+<!-- BODY -->
+<table cellpadding="2" cellspacing="2" bgcolor="#ffffff" class="head-wrap">
+  <tr>
+    <td> 
+    </td>
+  </tr>
+</table>
+<div class="fixed-blue"><table class="head-wrap2" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content --><!-- /content --><p class="callout" align="center">Planning to reserve a table or book us for a corporate event? <a href="http://www.paulaner-brauhaus.com/singapore/our_events" target="new">Contact Us Here</a></p></td>
+    <td></td>
+  </tr>
+</table></div>
+<div class ="fixed-head">
+<table class="head-wrap2" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><!-- /content -->
+      <a href="mailto:info@paulaner.com.sg"><img src="http://static.sg.estormtech.com/paulaner/template/foot.jpg" alt="foot"  /></a>
+      <!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+</div>
+<table class="head-wrap" bgcolor="#ffffff">
+  <tr>
+    <td></td>
+    <td class="header container" align="center"><table>
+      <tr>
+                  <td align="center"><p>Like Us on <a href="https://www.facebook.com/paulanerbrauhaussingapore" target="new"> Facebook </a> | Follow us on <a href="https://twitter.com/PaulanerSG" target="new">Twitter </a> | Click here to <a href="http://paulaner.crmtools.sg.estormtech.com/testing/paulaner?email={email}">Unsubscribe</a></p></td>
+                 </tr>
+               <tr>
+                   <td align="center"><p>Update your <a href="http://paulaner.crmtools.sg.estormtech.com/testing/paulaner_update?email={email}"> profile.</a> | Subscribe to this service <a href="http://paulaner.crmtools.sg.estormtech.com/testing/paulaner_optin?email={email}">click here.</a> <img src="http://edmtools.estormtech.com/customer_contacts/track_visitor?customername=paulaner.com.sg&email={email}&promo={template}" alt="" width="1" height="1"></p></td>
+                 </tr>
+    </table>      <!-- /content --><!-- /content --></td>
+    <td></td>
+  </tr>
+</table>
+
+  <!-- /video -->
+<tr><!-- /BODY --><!-- /video -->
+<p>&nbsp;</p><tr>
+<tr><!-- /FOOTER -->
+    
+</body>
+</html>
