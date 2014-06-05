@@ -2,6 +2,7 @@
 summary
 products
   products/crm
+  products/terminals
   products/scratch
   products/tms
   products/sms

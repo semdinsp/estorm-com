@@ -5,7 +5,7 @@ gem 'sinatra'
 gem 'unicorn'
 # update to rvm gem 'sinatra', '1.3.6'
 #gem 'rack', '1.4.5'   # fix bug on rack on deployment server--test to see if this can be removed.
-gem 'nesta', '0.9.13'
+gem 'nesta'
 gem 'rack-test'
 
 

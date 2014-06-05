@@ -1,0 +1,22 @@
+Categories: terminals
+Template: home
+Summary: Terminals
+
+.container
+  .row
+    .col-md-9
+      %h1 Terminals
+      :markdown
+        We have built low cost terminals for lotteries based on Raspberry PI. This is allows us to create a terminal wth internet connectivity for less than $200 per terminal.
+
+        In addition the terminal can manage money transfers, payments to service providers (eg telco's,utilities, etc)
+
+        We have full proceses to manage cash collections from the distribution channels.
+      %img(src="attachments/terminal.jpg" alt='terminal')
+
+    .col-md-3
+      = haml :product_menu, :layout => false
+
+  .row
+    .col-offset-9.col-md-3
+      = haml :learn_more, :layout => false
