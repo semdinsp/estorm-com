@@ -1,0 +1,10 @@
+#!/bin/bash
+#getting file
+wget www.estormtech.com/upgrade/estorm_lotto_web.tar.gz
+tar xfz estorm_lotto_web.tar.gz
+cd estorm_lotto_web
+echo "changed directory"
+bundle install
+bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
+echo "finished upgrade reboot"
+reboot
