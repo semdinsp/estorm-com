@@ -1,5 +1,7 @@
 #!/bin/bash
 #getting file
+echo "delete any old files"
+rm estorm_lotto_web.tar.gz
 echo "getting file"
 wget www.estormtech.com/upgrade/estorm_lotto_web.tar.gz
 echo "expanding file"
@@ -7,6 +9,10 @@ tar xfz estorm_lotto_web.tar.gz
 cd estorm_lotto_web
 echo "changed directory"
 bundle install
-bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
+gem install hwid
+echo "update bundle from existing"
+bundle update
+echo "update existing gems"
+bundle update estorm_lotto_gem estorm_lotto_tools httpclient teds_lotto_gem
 echo "finished upgrade reboot"
 reboot
