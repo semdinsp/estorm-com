@@ -7,7 +7,7 @@ use Rack::ConditionalGet
 use Rack::ETag
 
 use Rack::Static, 
-  :urls => ["/static"],
+  :urls => ["/static","upgrade"],
   :root => "content"
 
 require 'nesta/env'
