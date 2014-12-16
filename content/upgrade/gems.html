@@ -1,5 +1,7 @@
 #!/bin/bash
+cd /home/pi
 cd estorm_lotto_web
 echo "changed directory"
 bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
 echo "finished upgrade reboot"
+reboot
