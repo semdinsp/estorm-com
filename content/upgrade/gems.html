@@ -2,6 +2,13 @@
 cd /home/pi
 cd estorm_lotto_web
 echo "changed directory"
-/home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem"
+if [ -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem"
+fi
+if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
+fi
 echo "finished upgrade reboot"
 reboot
