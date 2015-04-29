@@ -9,11 +9,19 @@ echo "expanding file"
 tar xfz estorm_lotto_web.tar.gz
 cd estorm_lotto_web
 echo "changed directory"
-bundle install
 #gem install hwid
 #echo "update bundle from existing"
 #bundle update
 echo "update existing gems"
-bundle update estorm_lotto_gem estorm_lotto_tools httpclient teds_lotto_gem
+if [ -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle install"
+    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem"
+fi
+if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    bundle install
+    bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
+fi
 echo "finished upgrade reboot"
 reboot
