@@ -2,10 +2,12 @@
 #getting file
 cd /home/pi
 echo "delete any old files"
-rm sound.tar.gz
+FILE=sound.tar.gz
+rm $FILE
 echo "getting file"
-wget www.estormtech.com/upgrade/sound.tar.gz
+wget www.estormtech.com/upgrade/$FILE
 echo "expanding file"
-tar xfz sound.tar.gz
+tar xfz $FILE
+rm $FILE
 echo "finished sound install reboot"
 reboot
