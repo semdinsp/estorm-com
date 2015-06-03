@@ -1,8 +1,10 @@
 #!/bin/bash
 #getting file
+#THIS IS OLD MAKE CHANGES TO system.html
 cd /home/pi
 echo "delete any old files"
-rm estorm_lotto_web.tar.gz
+FILE=estorm_lotto_web.tar.gz
+rm $FILE
 echo "getting file"
 wget www.estormtech.com/upgrade/estorm_lotto_web.tar.gz
 echo "expanding file"
@@ -24,4 +26,5 @@ if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
     bundle update estorm_lotto_gem estorm_lotto_tools hwid httpclient teds_lotto_gem
 fi
 echo "finished upgrade reboot"
+rm $FILE
 reboot

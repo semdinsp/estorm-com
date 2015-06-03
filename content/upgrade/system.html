@@ -1,0 +1,26 @@
+#!/bin/bash
+#getting file
+cd /home/pi
+echo "delete any old files"
+FILE=estorm_lotto_web.tar.gz
+rm $FILE
+echo "getting file"
+wget www.estormtech.com/upgrade/$FILE
+echo "expanding file"
+tar xfz estorm_lotto_web.tar.gz
+cd estorm_lotto_web
+echo "changed directory"
+echo "update existing gems"
+if [ -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle install"
+    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  teds_lotto_gem"
+fi
+if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    bundle install
+    bundle update estorm_lotto_gem estorm_lotto_tools hwid teds_lotto_gem
+fi
+echo "finished upgrade reboot"
+rm $FILE
+reboot
