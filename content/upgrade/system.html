@@ -18,7 +18,9 @@ if [ -f /home/pi/.rvm/bin/rvm-shell ]
 fi
 if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
   then
-    sed 's/2.1.5/1.9.3/' Gemfile > Gemfile
+    sed 's/2.1.5/1.9.3/' Gemfile > aGemfile
+    cp aGemfile Gemfile
+    rm aGemfile
     bundle install
     bundle update estorm_lotto_gem estorm_lotto_tools hwid teds_lotto_gem
 fi
