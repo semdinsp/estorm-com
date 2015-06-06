@@ -4,13 +4,15 @@
 cd /home/pi
 echo "delete any old files"
 FILE=estorm_lotto_web.tar.gz
+DIR=/home/pi/estorm_lotto_web
 rm $FILE
 echo "getting file"
 wget www.estormtech.com/upgrade/estorm_lotto_web.tar.gz
 echo "expanding file"
 tar xfz estorm_lotto_web.tar.gz
-cd estorm_lotto_web
-echo "changed directory"
+cd $DIR
+sudo chmod a+w $DIR
+echo "changed directory and permissions"
 #gem install hwid
 #echo "update bundle from existing"
 #bundle update
