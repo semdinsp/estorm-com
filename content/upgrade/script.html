@@ -4,7 +4,7 @@ cd estorm_lotto_web
 echo "changed directory"
 SCRIPTDIR=/home/pi/scripts
 mkdir -p $SCRIPTDIR
-echo  '#!/usr/bin/bash'  > $SCRIPTDIR/start_wpa.sh
+echo  '#!bin/bash'  > $SCRIPTDIR/start_wpa.sh
 echo 'DISPLAY=:0.0  wpa_gui' >> $SCRIPTDIR/start_wpa.sh
 echo "finished script reboot"
 reboot
