@@ -1,15 +1,18 @@
 #!/bin/bash
 cd /home/pi
+echo "scaling down system"
 #run about 10:00 pm singapore time
 
-heroku restart --app estorm-sms
+echo "restart estorm-sms for memory leak"
+/usr/bin/heroku restart --app estorm-sms
 sleep 5
-
+echo "scale down estorm-sms, teds-lotto2d, lottocomb10"
 #originally 9
-heroku ps:scale web:5 --app estorm-sms
+/usr/bin/heroku ps:scale web=5 --app estorm-sms
 #originally 5
-heroku ps:scale web:2 --app teds-lott2d
+/usr/bin/heroku ps:scale web=2 --app teds-lott2d
 #originally 3
-heroku ps:scale web:1 --app teds-lottcombo10
+/usr/bin/heroku ps:scale web=1 --app teds-lottcombo10
+echo "finshed"
 
 
