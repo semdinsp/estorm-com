@@ -1,0 +1,12 @@
+#!/bin/bash
+cd /home/pi
+# run around 14:0 singapore time
+
+#originally 9
+heroku ps:scale web:10 --app estorm-sms
+#originally 5
+heroku ps:scale web:6 --app teds-lott2d
+#originally 3
+heroku ps:scale web:4 --app teds-lottcombo10
+
+

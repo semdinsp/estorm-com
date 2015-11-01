@@ -1,0 +1,15 @@
+#!/bin/bash
+cd /home/pi
+#run about 10:00 pm singapore time
+
+heroku restart --app estorm-sms
+sleep 5
+
+#originally 9
+heroku ps:scale web:5 --app estorm-sms
+#originally 5
+heroku ps:scale web:2 --app teds-lott2d
+#originally 3
+heroku ps:scale web:1 --app teds-lottcombo10
+
+
