@@ -4,11 +4,17 @@ cd /home/pi
 # cronttab
 # 30 14 * * *  /usr/bin/curl www.estormtech.com/upgrade/heroku-scale-up.html | bash
 
+scale-heroku () {
+  #usage:  scale-heroku appname value
+  echo "scaling $1 with web apps value $2"
+  heroku ps:scale web=$2 --app $1
+}
 
 #originally 9
 echo "scale up estorm-sms, teds-lotto2d, lottocomb10"
 echo "scale estorm-sms value 10"
-heroku ps:scale web=10 --app estorm-sms
+scale-heroku estorm-sms 10
+#heroku ps:scale web=10 --app estorm-sms
 #originally 5
 echo "scale teds-lotto2d value 6"
 heroku ps:scale web=6 --app teds-lotto2d
