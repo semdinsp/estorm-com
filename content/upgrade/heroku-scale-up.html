@@ -2,15 +2,16 @@
 cd /home/pi
 # run around 14:30 singapore time
 # cronttab
-# 30 14 * * * 
+# 30 14 * * *  /usr/bin/curl www.estormtech.com/upgrade/heroku-scale-up.html | bash
+
 
 #originally 9
 echo "scale up estorm-sms, teds-lotto2d, lottocomb10"
-/usr/bin/heroku ps:scale web=10 --app estorm-sms
+heroku ps:scale web=10 --app estorm-sms
 #originally 5
-/usr/bin/heroku ps:scale web=6 --app teds-lotto2d
+heroku ps:scale web=6 --app teds-lotto2d
 #originally 3
-/usr/bin/heroku ps:scale web=4 --app teds-lottocombo10
+heroku ps:scale web=4 --app teds-lottocombo10
 echo "scale up finished"
 
 
