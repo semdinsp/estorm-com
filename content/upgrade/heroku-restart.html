@@ -9,11 +9,14 @@ heroku restart --app estorm-sms
 sleep 5
 echo "scale down estorm-sms, teds-lotto2d, lottocomb10"
 #originally 9
+echo "scale down estorm-sms value 5"
 heroku ps:scale web=5 --app estorm-sms
 #originally 5
+echo "scale teds-lotto2d value 2"
 heroku ps:scale web=2 --app teds-lotto2d
 #originally 3
+echo "scale teds-lottocombo10 value 1"
 heroku ps:scale web=1 --app teds-lottocombo10
-echo "finshed"
+echo "finshed scale down"
 
 
