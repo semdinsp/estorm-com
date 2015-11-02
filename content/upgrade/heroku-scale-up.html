@@ -14,13 +14,9 @@ scale-heroku () {
 echo "scale up estorm-sms, teds-lotto2d, lottocomb10"
 echo "scale estorm-sms value 10"
 scale-heroku estorm-sms 10
-#heroku ps:scale web=10 --app estorm-sms
-#originally 5
-echo "scale teds-lotto2d value 6"
-heroku ps:scale web=6 --app teds-lotto2d
-#originally 3
-echo "scale teds-lottocombo10 value 4"
-heroku ps:scale web=4 --app teds-lottocombo10
+scale-heroku teds-lotto2d 6
+scale-heroku teds-lottocombo10 4
+unset scale-heroku
 echo "scale up finished"
 
 

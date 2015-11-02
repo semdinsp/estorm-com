@@ -3,20 +3,21 @@ cd /home/pi
 echo "scaling down system"
 #run about 10:00 pm singapore time
 # 15 22 * * * /usr/bin/curl www.estormtech.com/upgrade/heroku-restart.html | bash
-# maybe set path here  (eg /usr/bin/heroku)
+
+scale-heroku () {
+  #usage:  scale-heroku appname value
+  # maybe set path here  (eg /usr/bin/heroku)
+  echo "scaling $1 with web apps value $2"
+  heroku ps:scale web=$2 --app $1
+}
 echo "restart estorm-sms for memory leak"
 heroku restart --app estorm-sms
+echo "sleep 5 then scale down estorm-sms, teds-lotto2d, lottocomb10"
 sleep 5
-echo "scale down estorm-sms, teds-lotto2d, lottocomb10"
-#originally 9
-echo "scale down estorm-sms value 5"
-heroku ps:scale web=5 --app estorm-sms
-#originally 5
-echo "scale teds-lotto2d value 2"
-heroku ps:scale web=2 --app teds-lotto2d
-#originally 3
-echo "scale teds-lottocombo10 value 1"
-heroku ps:scale web=1 --app teds-lottocombo10
+scale-heroku estorm-sms 5
+scale-heroku teds-lotto2d 2
+scale-heroku teds-lottocombo10 1
+unset scale-heroku
 echo "finshed scale down"
 
 
