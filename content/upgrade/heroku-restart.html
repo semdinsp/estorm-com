@@ -6,9 +6,12 @@ echo "scaling down system"
 
 scale-heroku () {
   #usage:  scale-heroku appname value
-  # maybe set path here  (eg /usr/bin/heroku)
-  echo "scaling $1 with web apps value $2"
-  heroku ps:scale web=$2 --app $1
+  cmd=/usr/bin/heroku
+  if [ `uname`  ==  "Darwin" ];  then
+     cmd=heroku
+  fi
+  echo "$cmd scaling $1 with web apps value $2"
+  $cmd ps:scale web=$2 --app $1
 }
 echo "restart estorm-sms for memory leak"
 heroku restart --app estorm-sms

@@ -6,8 +6,12 @@ cd /home/pi
 
 scale-heroku () {
   #usage:  scale-heroku appname value
-  echo "scaling $1 with web apps value $2"
-  heroku ps:scale web=$2 --app $1
+  cmd=/usr/bin/heroku
+  if [ `uname`  ==  "Darwin" ];  then
+     cmd=heroku
+  fi
+  echo "$cmd scaling $1 with web apps value $2"
+  $cmd ps:scale web=$2 --app $1
 }
 
 #originally 9
