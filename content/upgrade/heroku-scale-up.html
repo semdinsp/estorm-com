@@ -7,7 +7,7 @@ cd /home/pi
 scale-heroku () {
   #usage:  scale-heroku appname value
   cmd=/usr/bin/heroku
-  if [ `uname`  ==  "Darwin" ];  then
+  if [ `uname`  =  "Darwin" ];  then
      cmd=heroku
   fi
   echo "$cmd scaling $1 with web apps value $2"
@@ -15,6 +15,7 @@ scale-heroku () {
 }
 
 #originally 9
+heroku restart --app estorm-sms
 echo "scale up estorm-sms, teds-lotto2d, lottocomb10"
 echo "scale estorm-sms value 10"
 scale-heroku estorm-sms 10

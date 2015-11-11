@@ -7,7 +7,7 @@ echo "scaling down system"
 scale-heroku () {
   #usage:  scale-heroku appname value
   cmd=/usr/bin/heroku
-  if [ `uname`  ==  "Darwin" ];  then
+  if [ `uname`  =  "Darwin" ];  then
      cmd=heroku
   fi
   echo "$cmd scaling $1 with web apps value $2"
