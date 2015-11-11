@@ -1,8 +1,11 @@
-#!/usr/bin/wolfram -script
 Needs["estormdash`"];
 ccDestinations = {"eka.mardiarti@estormtech.com", "febby@estormtech.com", "emiliana@estormtech.com", "henricos@estormtech.com"};
 bal = NumberForm[estormdash`getTelkomcelBalance[]["balance"], {5, 2}];
 pinlist = estormdash`getAvailablePins[];
 body = GraphicsGrid[{{Text[Style[StringJoin["Telkomcel Balance ", ToString[bal]], Blue, Bold, 18]]}, {Grid[Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type",   "Current Available"}], Frame -> All, Background -> {None, {LightBlue, {LightYellow}}}]}}, ImageSize -> {Small, Large}] ;
-
-SendMail[<|"To" -> "scott.sproule@gmail.com", "Cc" -> ccDestinations, "From" -> "scott.sproule@estormtech.com", "Server" -> "smtp.gmail.com", "UserName" -> "scott.sproule@estormtech.com", "Password" -> "estorm123!?", "PortNumber" -> 587, "EncryptionProtocol" -> "StartTLS", "Subject" -> StringJoin["Pulsa balance and pins status ", DateString[]], "Body" -> body|>]
+estormSendMail[<|"To" -> "scott.sproule@gmail.com", 
+  "Cc" -> ccDestinations, "From" -> "scott.sproule@estormtech.com", 
+  "Subject" -> 
+   StringJoin["Pulsa balance and pins status ", DateString[]], 
+  "Body" -> body|>];
+Quit[];
