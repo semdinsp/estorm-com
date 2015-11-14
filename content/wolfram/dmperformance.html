@@ -1,0 +1,25 @@
+Needs["dmdash`"]; 
+month = ToString[Take[StringSplit[DateString[]], {3, 4}]]; 
+results = estormdash`getRawWallets[]; 
+{header, rows} = dmdash`fileparse[results];
+rows = DeleteCases[rows, {""}];
+rows = Sort[rows, Sort[{#1[[4]], #2[[4]]}] == {#1[[4]], #2[[4]]} &];
+allrows = rows;
+rows = Select[rows, #[[7]] > 1 &]; 
+(* current reve > 0 *)day = DateList[][[3]];
+createDMAssociation[day_, rows_List, allrows_List] := 
+  Module[{assoc}, 
+   assoc = <|"day" -> day, "rows" -> rows, "allrows" -> allrows|>;
+   assoc];
+Needs["dreamUtilities`"];
+vals = createDMAssociation[day, rows, allrows];
+grid = dmdash`teamPerformanceDailyGrid[day, rows];
+grid2 = dmdash`dmPerformanceDailyGrid[day, rows];
+grid3 = dmdash`dmPerformanceMonthlyGrid[day, rows];
+cc={"eka.mardiarti@estormtech.com","henricos@estormtech.com","belo@estormtech.com"}
+fragments = {Style[StringJoin["DM Team Performance: ", DateString[]], 
+    Blue], grid, Style["Daily DM Performance", Blue], grid2, 
+   Style["DM Monthly Performance", Blue], grid3};
+estormAWSSendEmail[{"scott.sproule@estormtech.com"},cc , {}, "DM \
+Performance Target" , combineHTMLFragments[fragments]]
+Quit[];

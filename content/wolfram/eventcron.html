@@ -1,11 +1,13 @@
 Needs["estormdash`"];
+Needs["dreamUtilities`"];
 ccDestinations = {"eka.mardiarti@estormtech.com", "febby@estormtech.com", "emiliana@estormtech.com", "henricos@estormtech.com"};
 bal = NumberForm[estormdash`getTelkomcelBalance[]["balance"], {5, 2}];
 pinlist = estormdash`getAvailablePins[];
-body = GraphicsGrid[{{Text[Style[StringJoin["Telkomcel Balance ", ToString[bal]], Blue, Bold, 18]]}, {Grid[Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type",   "Current Available"}], Frame -> All, Background -> {None, {LightBlue, {LightYellow}}}]}}, ImageSize -> {Small, Large}] ;
-estormSendMail[<|"To" -> "scott.sproule@gmail.com", 
-  "Cc" -> ccDestinations, "From" -> "scott.sproule@estormtech.com", 
-  "Subject" -> 
-   StringJoin["Pulsa balance and pins status ", DateString[]], 
-  "Body" -> body|>];
+body = {{Text[
+    Style[StringJoin["Telkomcel Balance ", ToString[bal]], Blue, Bold,
+      18]]}, {Grid[
+    Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type", 
+      "Current Available"}], Frame -> All, 
+    Background -> {None, {LightBlue, {LightYellow}}}]}};
+estormAWSSendEmail[{"scott.sproule@gmail.com"},ccDestinations, {}, "DM Performance Target" , combineHTMLFragments[body]]
 Quit[];
