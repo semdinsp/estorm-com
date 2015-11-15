@@ -9,5 +9,5 @@ body = {{
     Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type", 
       "Current Available"}], Frame -> All, 
     Background -> {None, {LightBlue, {LightYellow}}}]}};
-estormAWSSendEmail[{"scott.sproule@gmail.com"},ccDestinations, {}, "DM Performance Target" , combineHTMLFragments[body]]
+estormAWSSendEmail[{"scott.sproule@gmail.com"},ccDestinations, {}, "DM Performance Target" , combineHTMLFragments[body]];
 Quit[];
