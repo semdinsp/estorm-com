@@ -5,7 +5,7 @@ bal = NumberForm[estormdash`getTelkomcelBalance[]["balance"], {5, 2}];
 pinlist = estormdash`getAvailablePins[];
 body = {
     Style[StringJoin["Telkomcel Balance ", ToString[bal]], Blue, Bold,
-      18]}, Grid[
+      18], Grid[
     Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type", 
       "Current Available"}], Frame -> All, 
     Background -> {None, {LightBlue, {LightYellow}}}],closingData[]};
