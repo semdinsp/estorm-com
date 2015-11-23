@@ -19,6 +19,6 @@ grid3 = dmdash`dmPerformanceMonthlyGrid[day, rows];
 cc={"eka.mardiarti@estormtech.com","henricos@estormtech.com","belo@estormtech.com"};
 fragments = {Style[StringJoin["DM Team Performance: ", DateString[]], 
     Blue], grid, Style["Daily DM Performance", Blue], grid2, 
-   Style["DM Monthly Performance", Blue], grid3};
+   Style["DM Monthly Performance", Blue], grid3,closingData[]};
 estormAWSSendEmail[{"scott.sproule@estormtech.com"},cc , {}, "DM Performance Target" , combineHTMLFragments[fragments]];
 Quit[];

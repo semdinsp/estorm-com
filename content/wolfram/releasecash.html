@@ -3,7 +3,7 @@ Needs["dreamUtilities`"];
 r = getReleaseCash[];
 If[r==$Failed,r = getReleaseCash[]];
 grid = r // TableForm;
-fragments = {Style[ StringJoin["Wallet Release Cash Rerport: ", DateString[]], Blue], grid, Style["More Stuff", Blue]};
+fragments = {Style[ StringJoin["Wallet Release Cash Rerport: ", DateString[]], Blue], grid, Style["More Stuff", Blue],closingData[]};
 to = {"emiliana@estormtech.com"};
 cc = {"scott.sproule@estormtech.com",  "eka.mardiarti@estormtech.com"};
 estormAWSSendEmail[to, cc, {}, "Release Cash Report" , 

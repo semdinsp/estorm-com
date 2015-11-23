@@ -1,13 +1,13 @@
 Needs["estormdash`"];
 Needs["dreamUtilities`"];
-ccDestinations = {"eka.mardiarti@estormtech.com", "febby@estormtech.com", "emiliana@estormtech.com", "henricos@estormtech.com"};
+cc = {"eka.mardiarti@estormtech.com", "febby@estormtech.com", "emiliana@estormtech.com", "henricos@estormtech.com"};
 bal = NumberForm[estormdash`getTelkomcelBalance[]["balance"], {5, 2}];
 pinlist = estormdash`getAvailablePins[];
-body = {{
+body = {
     Style[StringJoin["Telkomcel Balance ", ToString[bal]], Blue, Bold,
-      18]}, {Grid[
+      18]}, Grid[
     Prepend[{#, pinlist[#]} & /@ Keys[pinlist], {"Pulsa Type", 
       "Current Available"}], Frame -> All, 
-    Background -> {None, {LightBlue, {LightYellow}}}]}};
-estormAWSSendEmail[{"scott.sproule@gmail.com"},ccDestinations, {}, "Available Pulsa and Telkomcel Balance" , combineHTMLFragments[body]];
+    Background -> {None, {LightBlue, {LightYellow}}}],closingData[]};
+estormAWSSendEmail[{"scott.sproule@estormtech.com"},cc, {}, "Available Pulsa and Telkomcel Balance" , combineHTMLFragments[body]];
 Quit[];
