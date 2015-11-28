@@ -1,3 +1,5 @@
+Needs["dmdash`"];
+Needs["dreamUtilities`"];
 selectRCPerDM[dm_String, rows_List] := 
   Module[{mds}, mds = selectPattern[rows, {_, _, dm, __}]; mds];
 selectIncrement[rows_List] :=  
