@@ -1,25 +1,19 @@
-Needs["estormdash`"]; Needs["dmdash`"]; 
-processTime[rows_List] := 
- Module[{newrows}, 
+Needs["estormdash`"]; 
+Needs["dmdash`"]; 
+processTime[rows_List] :=  Module[{newrows}, 
   newrows = {StringTake[#[[3]], 10], #[[6]]} & /@ rows; newrows];
-getSmsReport[app_String, lastmonth_String] := 
- Module[{report, header, rows, gathered, gmap, grid},
+getSmsReport[app_String, lastmonth_String] :=  Module[{report, header, rows, gathered, gmap, grid},
   report = getRawSmsReport[app, lastmonth];
   header = report[[1]];
   rows = report[[3 ;;]];
   gathered = Gather[processTime[rows]];
-  gmap = Map[{gathered[[#, 1, 1]], Total[gathered, {2}][[#, 2]]} &, 
-    Table[i, {i, 1, Length[gathered]}]];
-  grid = Grid[
-    Prepend[{#[[1]], #[[2]]} & /@ gmap, {"Date",   "Count"}], 
-    Frame -> All, Background -> {None, {LightBlue, {LightYellow}}}];
-{grid, header, rows} = getSmsReport["SantaSms", "false"];
-frags = {Style["Santa SMS Report This Month", Blue], grid, 
-   closingData[]};
-to = {"febby@estormtech.com", "helio@estormtech.com"};
-cc = {"eka.mardiarti@estormtech.com", "scott.sproule@estormtech.com", 
-   "emiliana@estormtech.com"};
+  gmap = Map[{gathered[[#, 1, 1]], Total[gathered, {2}][[#, 2]]} &, Table[i, {i, 1, Length[gathered]}]];
+grid = Grid[Prepend[{#[[1]], #[[2]]} & /@ gmap, {"Date",   "Count"}], Frame -> All, Background -> {None, {LightBlue, {LightYellow}}}];
+{grid, header, rows}];
 
-estormAWSSendEmail[to, cc, {}, "Santa SMS Report", 
-  combineHTMLFragments[frags]];
+{grid, header, rows} = getSmsReport["SantaSms", "false"];
+frags = {Style["Santa SMS Report This Month", Blue], grid,   closingData[]};
+to = {"febby@estormtech.com", "helio@estormtech.com"};
+cc = {"eka.mardiarti@estormtech.com", "scott.sproule@estormtech.com",   "emiliana@estormtech.com"};
+estormAWSSendEmail[to, cc, {}, "Santa SMS Report",  combineHTMLFragments[frags]];
 Quit[];
