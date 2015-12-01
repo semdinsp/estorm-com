@@ -1,5 +1,6 @@
 Needs["estormdash`"]; 
 Needs["dmdash`"]; 
+Needs["dreamUtilities`"];
 processTime[rows_List] :=  Module[{newrows}, 
   newrows = {StringTake[#[[3]], 10], #[[6]]} & /@ rows; newrows];
 getSmsReport[app_String, lastmonth_String] := 
