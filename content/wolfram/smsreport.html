@@ -16,23 +16,27 @@ getSmsReport[app_String, lastmonth_String] :=
     Grid[Prepend[{#[[1]], #[[2]]} & /@ gmap, {"Date",   "$ Value"}], 
      Frame -> All, Background -> {None, {LightBlue, {LightYellow}}}];
    {grid, header, rows, gmap}];
+buildSMSReport[name_String] := 
+  Module[{fragments, grid, header, rows, gmap}, fragments = {};
+   {grid, header, rows, gmap} = getSmsReport[name, "false"];
+   fragments = 
+    Append[fragments, {Style[
+       StringJoin[name, " Report This Month:", 
+        ToString[Total[gmap][[2]]]], Blue], grid}];
+   {grid, header, rows, gmap} = 
+    getSmsReport[name, "true"];  (*last month *)  
+   fragments = 
+    Append[fragments, {Style[
+       StringJoin[name, " Report Last Month: ", 
+        ToString[Total[gmap][[2]]]], Blue], grid}];
+   fragments];
 
-name = "SantaSms";
-frags = {};
-{grid, header, rows, gmap} = getSmsReport[name, "false"];
-frags = Append[
-   frags, {Style[
-     StringJoin[name, " Report This Month: $", 
-      ToString[Total[gmap][[2]]]], Blue], grid}];
-{grid, header, rows, gmap} = 
- getSmsReport[name, "true"];  (*last month *)
-frags = 
- Append[frags, {Style[
-    StringJoin[name, " Report Last Month: $", 
-     ToString[Total[gmap][[2]]]], Blue], grid}];
+names = {"SantaSms", "Lotto4d", "Lotto3d", "Bible", "SmsCommands"};
+frags = buildSMSReport[#]  & /@ names;
 frags = Append[frags, closingData[]];
 
 to = {"febby@estormtech.com", "helio@estormtech.com"};
+If[DayName[Today] == "Tuesday", to = Append[to, "randy@melon.co.id"];
 cc = {"eka.mardiarti@estormtech.com", "scott.sproule@estormtech.com", 
    "emiliana@estormtech.com"};
 
