@@ -21,13 +21,13 @@ buildSMSReport[name_String] :=
    {grid, header, rows, gmap} = getSmsReport[name, "false"];
    fragments = 
     Append[fragments, {Style[
-       StringJoin[name, " Report This Month:", 
+       StringJoin[name, " Report Current Month: $", 
         ToString[Total[gmap][[2]]]], Blue], grid}];
    {grid, header, rows, gmap} = 
     getSmsReport[name, "true"];  (*last month *)  
    fragments = 
     Append[fragments, {Style[
-       StringJoin[name, " Report Last Month: ", 
+       StringJoin[name, " Report Last Month: $", 
         ToString[Total[gmap][[2]]]], Blue], grid}];
    fragments];
 
@@ -36,10 +36,10 @@ frags = buildSMSReport[#]  & /@ names;
 frags = Append[frags, closingData[]];
 
 to = {"febby@estormtech.com", "helio@estormtech.com"};
-If[DayName[Today] == "Tuesday", to = Append[to, "randy@melon.co.id"]];
+If[DayName[Today] == Friday, to = Append[to, "randy@melon.co.id"]];
 cc = {"eka.mardiarti@estormtech.com", "scott.sproule@estormtech.com", 
    "emiliana@estormtech.com"};
 
-estormAWSSendEmail[to, cc, {}, "Santa SMS Report", 
+estormAWSSendEmail[to, cc, {}, "SMS Reporting", 
   combineHTMLFragments[Flatten[frags]]];
 Quit[];
