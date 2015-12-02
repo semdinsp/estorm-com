@@ -13,7 +13,7 @@ checkIfOldReleaseCash[dm_String, releasecashes_List] :=
    latestRC = getLatestRCPerDM[dm, releasecashes];
    rcdate = DateObject[{2006, 12}];
    If[Head[latestRC] == List, rcdate = DateObject[latestRC[[13]]]];
-    If[DateDifference[rcdate, DateObject[]] > Quantity[8, "days"], 
+    If[DateDifference[rcdate, DateObject[]] > Quantity[8, "Days"], 
     True, False]];
 rcPerDM[dm_String, rows_List] := 
   Module[{data, res}, data = selectRCPerDM[dm, rows]; 
