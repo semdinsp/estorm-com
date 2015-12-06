@@ -6,7 +6,7 @@ grid = dmdash`dmAvailableCredit[
    Select[rows, #[[7]] > 0.5 && #[[1]]/(#[[7]]/day) < 2 &], day] ;
 grid2 = dmdash`dmWalletReview[rows];
 grid3 = dmdash`dmAvailableCredit[rows, day] ;
-allwallets = dmdash`allWallets[allrows];
+allwallets = dmdash`allWallets[DeleteCases[allrows, {_, "estorm-master-wallet", __}]];
 cc = {"eka.mardiarti@estormtech.com", "henricos@estormtech.com", 
    "emiliana@estormtech.com", "helio@estormtech.com", 
    "scott.sproule@estormtech.com"};
