@@ -6,6 +6,7 @@ grid = dmdash`dmAvailableCredit[
    Select[rows, #[[7]] > 0.5 && #[[1]]/(#[[7]]/day) < 2 &], day] ;
 grid2 = dmdash`dmWalletReview[rows];
 grid3 = dmdash`dmAvailableCredit[rows, day] ;
+allwallets = dmdash`allWallets[allrows];
 cc = {"eka.mardiarti@estormtech.com", "henricos@estormtech.com", 
    "emiliana@estormtech.com", "helio@estormtech.com", 
    "scott.sproule@estormtech.com"};
@@ -15,7 +16,7 @@ to = {"belo@estormtech.com", "antonio.quelo@estormtech.com",
 fragments = {Style[
     StringJoin["Immediate action required: ", DateString[]], Blue], 
    grid, Style["Low balance", Blue], grid2, 
-   Style["All wallets cash days left", Blue], grid3, closingData[]};
+   Style["All wallets cash days left", Blue], grid3,Style["All wallets Balance", Blue], allwallets, closingData[]};
 estormAWSSendEmail[to, cc, {}, "Wallets Requiring Action", 
  combineHTMLFragments[fragments]];
 Quit[];

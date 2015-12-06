@@ -17,7 +17,7 @@ echo "restart estorm-sms for memory leak"
 heroku restart --app estorm-sms
 echo "sleep 5 then scale down estorm-sms, teds-lotto2d, lottocomb10"
 sleep 5
-scale-heroku estorm-sms 5
+scale-heroku estorm-sms 4
 scale-heroku teds-lotto2d 1
 scale-heroku teds-lottocombo10 1
 echo "finshed scale down"
