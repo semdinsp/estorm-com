@@ -42,4 +42,46 @@ cc = {"eka.mardiarti@estormtech.com", "scott.sproule@estormtech.com",
 
 estormAWSSendEmail[to, cc, {}, "SMS Reporting", 
   combineHTMLFragments[Flatten[frags]]];
+
+Needs["estormdash`"]; Needs["dmdash`"];
+Needs["dreamUtilities`"];
+tdbin = Databin["4zEg8Ybn"];
+monthlydata = estormdash`getMonth["summary"];
+monthly = estormdash`getMonth["transactions"];
+trev = NumberForm[
+   ToExpression[Last[EventSeries[tdbin]["revenue"]["Values"]]], {5, 
+    2}];
+td = TemporalData[monthly["Monthly"]] ; tsmodel = 
+ TimeSeriesModelFit[td, "ARIMA"]; forecast = 
+ TimeSeriesForecast[
+  tsmodel, {20}];(* \
+p1=DateListPlot[{td,forecast,MovingAverage[td,12]},PlotLabel\[Rule] \
+"Daily Revenue in $",PlotLegends\[Rule]{"actuals","forecast","moving \
+average"},ImageSize\[Rule] Medium]; *)
+
+p1 = DateListPlot[{td}, PlotLabel -> "Daily Revenue in $", 
+   PlotLegends -> {"actuals"}, ImageSize -> Medium];
+mgraph = p1;(* \
+Show[p1,DateListPlot[RandomFunction[tsmodel,{1,20},2],PlotStyle\[Rule]\
+{Gray,Pink}]];  *)
+
+labeler[v_, {i_, j_}, {ri_, cj_}] := Placed[v, Top]; labels = 
+ StringDrop[#[[1]], -3] & /@ 
+  monthlydata["Monthly Summary"]; msummary = 
+ BarChart[TemporalData[monthlydata["Monthly Summary"]], 
+  PlotLabel -> "Revenue by month", ImageSize -> Large, 
+  ChartLabels -> Sort[labels], LabelingFunction -> labeler];
+frags = {{Style[StringJoin["Revenue ", ToString[trev]], Blue, Bold, 
+     24]}, {msummary}, {estormdash`plotDatabin[tdbin, "revenue"], 
+    estormdash`plotDatabin[tdbin, 
+     "distributors"]}, {estormdash`plotDatabin[tdbin, 
+     "transactionUcount"]}};
+frags = Append[frags, closingData[]];
+
+to = {"scott.sproule@estormtech.com"};  
+cc = {"eka.mardiarti@estormtech.com", "michael.grandinetti@sea-ent.com"}
+
+estormAWSSendEmail[to, cc, {}, "S&A Reporting", 
+  combineHTMLFragments[Flatten[frags]]];  
+  
 Quit[];
