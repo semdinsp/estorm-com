@@ -4,8 +4,7 @@ cd estorm_lotto_web
 echo "changed directory"
 if [ -f /home/pi/.rvm/bin/rvm-shell ]
   then
-    /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update estorm_lotto_gem  estorm_lotto_tools hwid  teds_lotto_gem estorm_lotto_views"
-    # /home/pi/.rvm/bin/rvm-shell 2.1.5  -c "bundle update  estorm_lotto_views  "
+    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem  estorm_lotto_tools hwid  teds_lotto_gem estorm_lotto_views"
 fi
 if [ ! -f /home/pi/.rvm/bin/rvm-shell ]
   then

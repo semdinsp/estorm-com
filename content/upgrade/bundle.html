@@ -1,0 +1,16 @@
+#!/bin/bash
+cd /home/pi
+cd estorm_lotto_web
+echo "changed directory"
+if [ -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    /home/pi/.rvm/bin/rvm-shell 2.4.0 -c "bundle update"
+fi
+cd /home/pi/scratch_distributor
+echo "changed directory to scratch_distributor"
+if [ -f /home/pi/.rvm/bin/rvm-shell ]
+  then
+    /home/pi/.rvm/bin/rvm-shell 2.4.0 -c "bundle update"
+fi
+echo "finished bundle update reboot"
+reboot

@@ -1,43 +1,15 @@
 Categories: contact
 Template: home
 Summary: Email information
+Link text: Contact
 
 .container
   .row
-    .col-md-8
-      %h1 Contact
-      :markdown
-        #### Our Address:
-  
-        37th Floor, Singapore Land Tower,
-        50 Raffles Place,
-        Singapore 048623
-
-        #### Telephone
-        +65 6829 7025
-  
-        #### E-mail: 
-        info@estormtech.com
-  
-        #### Legal: 
-
-        Singapore Company Registration: 200904977M
-      %h1 Timor Contact
-      :markdown
-        #### Our Address:
-  
-        02-06 Landmark Plaza
-        Dili, Timor Leste
+    = haml :contact_card, :layout=> false
     .col-md-4
       = haml :product_menu, :layout => false
-
-  .row
-    .col-md-8
-      %h4 Map:
-      %iframe(width="420" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?q=50+raffles+place,+Singapore+048623&hl=en&sll=1.308712,103.841957&sspn=0.17093,0.252342&t=m&hnear=50+Raffles+Pl,+Singapore+048623&ie=UTF8&hq=&ll=1.285207,103.852901&spn=0.025743,0.025749&amp;z=14&iwloc=A&output=embed")
-      %a(href="https://maps.google.com/maps?q=50+raffles+place&amp;hl=en&sll=1.308712,103.841957&sspn=0.17093,0.252342&t=m&hnear=50+Raffles+Pl,+Singapore+048623&ie=UTF8&hq=&ll=1.285207,103.852901&spn=0.025743,0.025749&z=14&iwloc=A&source=embed") 
-        View Larger Map
-
+    %h1 &nbsp;
+    = haml :contact_map, :layout=> false
     .col-md-4
       = haml :learn_more, :layout => false
 
