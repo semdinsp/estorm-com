@@ -16,6 +16,7 @@ GEM
       sass (>= 3.1)
       sinatra (~> 1.4)
       tilt (~> 1.4)
+    power_assert (0.4.1)
     puma (3.9.1)
     rack (1.6.8)
     rack-protection (1.5.3)
@@ -29,6 +30,8 @@ GEM
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
     temple (0.8.0)
+    test-unit (3.2.3)
+      power_assert
     tilt (1.4.1)
 
 PLATFORMS
@@ -39,6 +42,7 @@ DEPENDENCIES
   puma
   rack-test
   sinatra
+  test-unit
 
 RUBY VERSION
    ruby 2.4.0p0
