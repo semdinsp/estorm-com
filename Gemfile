@@ -9,7 +9,10 @@ gem 'puma'
 gem 'nesta'
 gem 'rack-test'
 gem 'test-unit'
-
+gem 'maruku'
+gem 'kramdown'
+gem 'bluecloth'
+gem 'redcarpet'
 
 
 # gem (RUBY_VERSION =~ /^1.9/) ? 'ruby-debug19': 'ruby-debug'
