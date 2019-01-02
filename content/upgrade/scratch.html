@@ -4,8 +4,7 @@ cd scratch_distributor
 echo "changed directory"
 if [ -f /home/pi/.rvm/bin/rvm-shell ]
   then
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update tools_engine estorm_lotto_gem hwid estorm_lotto_tools tools_validator"
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_omr"
+    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update tools_engine estorm_lotto_gem hwid estorm_lotto_tools tools_validator estorm_lotto_omr"
 fi
 echo "finished upgrade reboot"
 reboot
