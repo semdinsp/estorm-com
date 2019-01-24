@@ -2,9 +2,9 @@
 cd /home/osboxes
 cd scratch_distributor
 echo "changed directory"
-if [ -f /home/osboxes/.rvm/bin/rvm-shell ]
+if [ -f /home/administrator/.rvm/bin/rvm-shell ]
   then
-    /home/osboxes/.rvm/bin/rvm-shell 2.4.0  -c "bundle update tools_engine estorm_lotto_gem hwid estorm_lotto_tools tools_validator estorm_lotto_omr"
+    /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle update tools_engine estorm_lotto_gem hwid estorm_lotto_tools tools_validator estorm_lotto_omr"
 fi
 echo "finished upgrade reboot"
 reboot
