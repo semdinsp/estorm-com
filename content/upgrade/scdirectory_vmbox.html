@@ -1,9 +1,9 @@
 #!/bin/bash
 #getting file
-cd /home/pi
+cd /home/administrator
 echo "delete any old files"
 FILE=scratch_distributor.tar.gz
-DIR=/home/pi/scratch_distributor
+DIR=/home/administrator/scratch_distributor
 rm $FILE
 echo "getting file"
 wget www.estormtech.com/upgrade/$FILE
@@ -13,10 +13,11 @@ cd $DIR
 sudo chmod a+w $DIR
 echo "changed directory and permissons"
 echo "update existing gems"
-if [ -f /home/pi/.rvm/bin/rvm-shell ]
+if [ -f /home/administrator/.rvm/bin/rvm-shell ]
   then
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
+    /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
+    /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
 fi
 echo "finished upgrade reboot"
 reboot
+
