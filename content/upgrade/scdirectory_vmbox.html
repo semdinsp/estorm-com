@@ -19,10 +19,11 @@ echo "changed directory and permissons"
 echo "update existing gems"
 if [ -f /home/administrator/.rvm/bin/rvm-shell ]
   then
-    chmod -R 777 scratch_distributors/
+    chmod -R 777 scratch_distributor/
     chmod -R 777 /home/administrator/.rvm/gems/ruby-2.4.0/
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "gem install nokogiri -v 1.10.3"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "gem install sassc -v 2.0.1"
+    /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "gem install websocket-driver -v 0.7.0"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "RAILS_ENV=production rake db:migrate"
