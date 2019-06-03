@@ -7,16 +7,23 @@ DIR=/home/administrator/scratch_distributor
 rm $FILE
 echo "getting file"
 wget www.estormtech.com/upgrade/$FILE
+echo "back up database"
+cp /home/administrator/db/production.sqlite3  /tmp/production.sqlite3 
 echo "expanding file"
 tar xfz $FILE
+echo "restore database"
+cp /tmp/production.sqlite3  /home/administrator/db/production.sqlite3 
 cd $DIR
 sudo chmod a+w $DIR
 echo "changed directory and permissons"
 echo "update existing gems"
 if [ -f /home/administrator/.rvm/bin/rvm-shell ]
   then
+    chmod -R 777 scratch_distributors/
+    chmod -R 777 /home/administrator/.rvm/gems/ruby-2.4.0/
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
+    /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "RAILS_ENV=production rake db:migrate"
 fi
 echo "finished upgrade reboot"
 reboot

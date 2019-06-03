@@ -7,8 +7,13 @@ DIR=/home/pi/scratch_distributor
 rm $FILE
 echo "getting file"
 wget www.estormtech.com/upgrade/$FILE
+echo "back up database"
+cp /home/pi/db/production.sqlite3  /tmp/production.sqlite3 
 echo "expanding file"
 tar xfz $FILE
+echo "restore database"
+cp /tmp/production.sqlite3  /home/pi/db/production.sqlite3 
+cd $DIR
 cd $DIR
 sudo chmod a+w $DIR
 echo "changed directory and permissons"
@@ -17,7 +22,11 @@ if [ -f /home/pi/.rvm/bin/rvm-shell ]
   then
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
+    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "RAILS_ENV=production rake db:migrate"
+    apt-get purge chromium
+    apt-get install chromium-browser
 fi
+# need to update file
 echo "finished upgrade reboot"
 reboot
 
