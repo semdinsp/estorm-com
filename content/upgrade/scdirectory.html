@@ -23,8 +23,8 @@ echo "changed directory and permissons"
 echo "update existing gems"
 if [ -f /home/pi/.rvm/bin/rvm-shell ]
   then
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "gem install nokogiri -v 1.10.3"
-    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "gem install sassc -v 2.0.1"
+    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "gem install nokogiri -v 1.10.3 --conservative"
+    /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "gem install sassc -v 2.0.1 --conservative"
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle install"
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "RAILS_ENV=production rake db:migrate"
