@@ -13,6 +13,9 @@ echo "expanding file"
 tar xfz $FILE
 echo "restore database"
 cp /tmp/production.sqlite3  $DIR/db/production.sqlite3 
+echo "installing yarn"
+apt-get --yes --force-yes  install yarn
+apt-get autoremove
 cd $DIR
 cd $DIR
 sudo chmod a+w $DIR
@@ -26,7 +29,7 @@ if [ -f /home/pi/.rvm/bin/rvm-shell ]
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "bundle update estorm_lotto_gem estorm_lotto_tools hwid  tools_validator tools_engine"
     /home/pi/.rvm/bin/rvm-shell 2.4.0  -c "RAILS_ENV=production rake db:migrate"
     apt-get purge chromium
-    apt-get install chromium-browser
+    apt-get --yes --force-yes install chromium-browser
 fi
 # need to update file
 echo "finished upgrade reboot"
