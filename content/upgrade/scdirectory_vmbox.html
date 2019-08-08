@@ -22,7 +22,7 @@ echo "changed directory and permissons"
 echo "update existing gems"
 if [ -f /home/administrator/.rvm/bin/rvm-shell ]
   then
-    chmod -R 777 scratch_distributor/
+    chmod -R 777 /home/administrator/scratch_distributor/
     chmod -R 777 /home/administrator/.rvm
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "gem install nokogiri -v 1.10.3 --conservative"
     /home/administrator/.rvm/bin/rvm-shell 2.4.0  -c "gem install sassc -v 2.0.1 --conservative"
