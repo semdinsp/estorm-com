@@ -14,7 +14,7 @@ tar xfz $FILE
 echo "restore database"
 cp /tmp/production.sqlite3  $DIR/db/production.sqlite3 
 echo "installing yarn"
-apt-get --yes  install yarn
+apt-get --yes --force-yes  install yarn
 apt-get autoremove
 cd $DIR
 sudo chmod a+w $DIR
