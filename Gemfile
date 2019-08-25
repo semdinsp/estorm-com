@@ -8,6 +8,7 @@ gem 'puma'
 #gem 'rack', '1.4.5'   # fix bug on rack on deployment server--test to see if this can be removed.
 gem 'nesta'
 gem 'rack-test'
+gem 'rack-ssl'
 gem 'test-unit'
 gem 'maruku'
 gem 'kramdown'
