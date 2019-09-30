@@ -10,9 +10,10 @@ use Rack::ETag
 
 puts "Envionment is: #{ENV['RACK_ENV']}"
 if ENV['RACK_ENV']=='production'
-  use Rack::SSL 
-  puts "force ssl with rack-ssl in production environment"
+#   use Rack::SSL    # SCOTT FIX LATER
+#  puts "force ssl with rack-ssl in production environment"
 end 
+
 
 use Rack::Static, 
   :urls => ["/static","/upgrade"],
