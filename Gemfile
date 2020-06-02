@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 # update to rvm gem 'rack', '1.4.5'
-ruby "2.6.3"
+ruby "2.6.6"
 gem 'sinatra'
 #gem 'unicorn'
 gem 'puma'
