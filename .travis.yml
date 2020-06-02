@@ -1,6 +1,6 @@
 language: ruby
 rvm:
-  - "2.6.3"
+  - "2.6.6"
 gemfile: Gemfile
 script: bundle exec ruby test_app.rb
 notifications:
